@@ -3,12 +3,7 @@
 
 def solution(A, K):
     # write your code in Python 2.7
-    lenA = len(A)
-    if lenA <= 0:
+    if(len(A) <= 1):
         return A
-    K = K % lenA
-    while (K > 0):
-        v = A.pop()
-        A.insert(0,v)
-        K = K - 1
-    return A
+    K = K % len(A)
+    return A[-K:] + A[:-K]
